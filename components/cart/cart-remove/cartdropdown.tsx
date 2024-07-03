@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Dropdowncart: React.FC = () => {
   return (
     <div className="cart-dropdown dropdown-menu">
@@ -40,20 +42,20 @@ const Dropdowncart: React.FC = () => {
             <p className="m-0 fs-5 fw-bold">$422.99</p>
           </div>
         </div>
-        <a
+        <Link
           href="/chekout/Cart"
           className="btn btn-outline-dark w-100 text-center mt-4"
           role="button"
         >
           View Cart
-        </a>
-        <a
+        </Link>
+        <Link
           href="/chekout/Checkout"
           className="btn btn-dark w-100 text-center mt-2"
           role="button"
         >
           Proceed To Checkout
-        </a>
+        </Link>
       </div>
       {/* / Cart Summary */}
     </div>
