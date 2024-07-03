@@ -1,118 +1,153 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+"use client"
 
-export default function Home() {
+import Navbarser from "@/components/navbar2";
+import Footer2 from "@/components/ui/footer2";
+import Menus2 from "@/components/ui/navbar/Menus2";
+
+import Dropdowncart from "@/components/cart/cart-remove/cartdropdown";
+import Head from 'next/head';
+import Heroswiper from "@/components/swiper/swiper-homepage-hero";
+import Logos from "@/components/marque/logo";
+import Categories from "@/components/swiper/swiper-categories";
+import Instagramsw from "@/components/swiper/instragram";
+import Comentarios from '@/components/Reviews/reviews';
+
+
+import { useEffect } from 'react';
+import Navbar2 from '@/components/navbar2';
+
+const runScripts = () => {
+  import('@/public/OLDS/js/theme.js')
+    .then(() => {
+      console.log('theme.js loaded');
+    })
+    .catch((err) => {
+      console.error('Error loading theme.js:', err);
+    });
+};
+
+const Home = () => {
+
+
+  
+  useEffect(() => {
+    const handleResize = () => {
+      const mediaQuery = window.matchMedia('(min-width: 768px)');
+      if (mediaQuery.matches) {
+        runScripts();
+      }
+    };
+
+    // Ejecutar al montar el componente
+    handleResize();
+
+    // Escuchar cambios de tamaño de pantalla
+    window.addEventListener('resize', handleResize);
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+    <>
+    <div className="bg-white">
+  <Navbar2/>
+  {/* / Navbar*/}
+
+  {/* Main Section*/}
+  <section className="mt-0 overflow-hidden ">
+    {/* Page Content Goes Here */}
+    {/* / Top banner */}
+    <section
+      className="vh-75 vh-lg-60 container-fluid rounded overflow-hidden"
+      data-aos="fade-in"
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <Heroswiper/>
+    </section>
+    {/*/ Top Banner*/}
+    {/* Featured Brands*/}
+    <div className="brand-section container-fluid" data-aos="fade-in">
+      <div className="bg-overlay-sides-white-to-transparent bg-white py-5 py-md-7">
+        <Logos/>
+      </div>
+    </div>
+    {/*/ Featured Brands*/}
+    <div className="container-fluid">
+      {/* Featured Categories*/}
+      <div className="m-0">
+          {/**  {{#if (config homepage-categories) }}
+                    {{>
+                        swiper/swiper-homepage-categories
+                        entries=homepage-categories.entries
+                    }}
+          {{/if}} */}
+        <Categories/>
+        {/* SVG Used for Clipath on featured images above*/}
+        {/* svg */}
+      </div>
+      {/* /Featured Categories*/}
+      {/* Categorias */}
+      <section className="py-5" data-aos="fade-in">
+  <div className="container">
+    <div className="row g-5">
+      <div className="col-12 col-md-7" data-aos="fade-right">
+        <div className="m-0">
+          <p className="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">
+            Hiking Essentials
+          </p>
+          <h2 className="display-5 fw-bold mb-6">
+            Our Latest Must-Have Products
+          </h2>
+          <div className="px-8 position-relative">
+            {/* Swiper*/}
+            {/*{{> swiper/swiper-linked-carousel-small}}*/}
+            {/* /Swiper*/}
+            {/* Swiper Arrows */}
+            <div className="swiper-prev-linked position-absolute top-50 start-0 mt-n8 cursor-pointer transition-all opacity-50-hover">
+              <i className="ri-arrow-left-s-line ri-2x" />
+            </div>
+            <div className="swiper-next-linked position-absolute top-50 end-0 me-3 mt-n8 cursor-pointer transition-all opacity-50-hover">
+              <i className="ri-arrow-right-s-line ri-2x" />
+            </div>
+            {/* / Swiper Arrows*/}
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="col-md-5 d-none d-md-flex" data-aos="fade-left">
+        <div className="w-100 h-100">
+          {/* Swiper*/}
+          {/*{{> swiper/swiper-linked-carousel-large}}*/}
+          {/* / Swiper*/}
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
+  </div>
+      </section>
+      {/* fin categorias */}
+      {/* Homepage Intro*/}
+      <Comentarios/>
+      {/* / Homepage Intro*/}
+      {/* Instagram*/}
+      <Instagramsw/>
+      {/* / Instagram*/}
+    </div>
+    {/* /Page Content */}
+  </section>
+  {/* / Main Section*/}
+  <Footer2/>
+  {/* / Footer*/}\
+  
+  {/* ##### Welcome Area Start ##### */}
+  </div>
+  
+  </>
   );
-}
+};
+
+export default Home

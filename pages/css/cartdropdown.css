@@ -1,0 +1,13 @@
+/* styles.css */
+.cart-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1;
+    padding: 20px;
+    width: 300px;
+  }
+  
