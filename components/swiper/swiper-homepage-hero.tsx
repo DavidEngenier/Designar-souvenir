@@ -56,7 +56,7 @@ export default function Heroswiper() {
           </h2>
           <div data-swiper-parallax-y={-25}>
             <a
-              href="{{webRoot}}/category.html"
+              href="/Category.html"
               className="btn btn-psuedo text-white"
               role="button"
             >
@@ -94,7 +94,7 @@ export default function Heroswiper() {
           </h2>
           <div data-swiper-parallax-y={-25}>
             <a
-              href="{{webRoot}}/category.html"
+              href="/Category.html"
               className="btn btn-psuedo text-white"
               role="button"
             >
@@ -132,7 +132,7 @@ export default function Heroswiper() {
           </h2>
           <div data-swiper-parallax-y={-25}>
             <a
-              href="{{webRoot}}/category.html"
+              href="/Category.html"
               className="btn btn-psuedo text-white"
               role="button"
             >
@@ -170,7 +170,7 @@ export default function Heroswiper() {
           </h2>
           <div data-swiper-parallax-y={-25}>
             <a
-              href="{{webRoot}}/category.html"
+              href="/Category.html"
               className="btn btn-psuedo text-white"
               role="button"
             >

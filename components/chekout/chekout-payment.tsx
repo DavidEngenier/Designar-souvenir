@@ -156,7 +156,7 @@ export default function Payment() {
   </div>
   <div className="pt-5 mt-5 pb-5 border-top d-flex flex-column flex-md-row justify-content-between align-items-center">
     <a
-      href="{{webRoot}}/checkout-shipping.html"
+      href="/chekout/Checkout-shiping"
       className="btn ps-md-0 btn-link fw-bolder w-100 w-md-auto mb-2 mb-md-0"
       role="button"
     >

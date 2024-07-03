@@ -20,7 +20,7 @@ export default function CartSUMARY () {
           </div>
         </div>
         <a
-          href="{{webRoot}}/checkout.html"
+          href="/chekout/Checkout"
           className="btn btn-dark w-100 text-center"
           role="button"
         >

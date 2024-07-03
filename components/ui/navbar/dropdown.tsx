@@ -11,49 +11,49 @@ const Droprtitem: React.FC = () => {
       <h6 className="dropdown-heading">Coats &amp; Jackets</h6>
       <ul className="list-unstyled">
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Waterproof Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Insulated Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Down Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Softshell Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Casual Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Windproof Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Breathable Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Cleaning &amp; Proofing
           </a>
         </li>
         <li className="dropdown-list-item">
           <a
             className="dropdown-item dropdown-link-all"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             View All
           </a>
@@ -66,49 +66,49 @@ const Droprtitem: React.FC = () => {
       <h6 className="dropdown-heading">Insulated</h6>
       <ul className="list-unstyled">
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Insulated Jackets
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Bodywarmers
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Parkas
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Baselayers &amp; Thermals
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Winter Hats
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Scarves &amp; Neck
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Gloves &amp; Mitts
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Accessories
           </a>
         </li>
         <li className="dropdown-list-item">
           <a
             className="dropdown-item dropdown-link-all"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             View All
           </a>
@@ -121,49 +121,49 @@ const Droprtitem: React.FC = () => {
       <h6 className="dropdown-heading">Footwear</h6>
       <ul className="list-unstyled">
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Lifestyle &amp; Casual
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Walking Shoes
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Running Shoes
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Military Boots
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Fabric Walking Boots
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Leather Walking Boots
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Wellies
           </a>
         </li>
         <li className="dropdown-list-item">
-          <a className="dropdown-item" href="{{webRoot}}/category.html">
+          <a className="dropdown-item" href="/Category.html">
             Winter Footwear
           </a>
         </li>
         <li className="dropdown-list-item">
           <a
             className="dropdown-item dropdown-link-all"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             View All
           </a>
@@ -178,7 +178,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Insulated Jackets
           </a>
@@ -186,7 +186,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Bodywarmers
           </a>
@@ -194,7 +194,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Parkas
           </a>
@@ -202,7 +202,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Baselayers &amp; Thermals
           </a>
@@ -210,7 +210,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Winter Hats
           </a>
@@ -218,7 +218,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Scarves &amp; Neck
           </a>
@@ -226,7 +226,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Gloves &amp; Mitts
           </a>
@@ -234,7 +234,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             Accessories
           </a>
@@ -242,7 +242,7 @@ const Droprtitem: React.FC = () => {
         <li className="dropdown-list-item">
           <a
             className="dropdown-item text-danger dropdown-link-all"
-            href="{{webRoot}}/category.html"
+            href="/Category.html"
           >
             View All
           </a>
@@ -255,7 +255,7 @@ const Droprtitem: React.FC = () => {
     
     <div className="me-5 f-w-20">
     {data.entries.map((brand, index) =>(
-      <a key={index} className="d-block" href="{{webRoot}}/category.html">
+      <a key={index} className="d-block" href="/Category.html">
         <picture>
           <img
             className="img-fluid d-table mx-auto"

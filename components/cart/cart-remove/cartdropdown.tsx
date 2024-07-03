@@ -41,14 +41,14 @@ const Dropdowncart: React.FC = () => {
           </div>
         </div>
         <a
-          href="{{webRoot}}/cart.html"
+          href="/chekout/Cart"
           className="btn btn-outline-dark w-100 text-center mt-4"
           role="button"
         >
           View Cart
         </a>
         <a
-          href="{{webRoot}}/checkout.html"
+          href="/chekout/Checkout"
           className="btn btn-dark w-100 text-center mt-2"
           role="button"
         >

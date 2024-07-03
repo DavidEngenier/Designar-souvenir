@@ -5,7 +5,7 @@ export default function Checkinformacion() {
         <div className="d-flex justify-content-between align-items-center mb-4 border-bottom pb-4">
           <h3 className="fs-5 fw-bolder m-0 lh-1">Contact Information</h3>
           <small className="text-muted fw-bolder">
-            Already registered? <a href="{{webRoot}}/login.html">Login</a>
+            Already registered? <a href="">Login</a>
           </small>
         </div>
         <div className="row">

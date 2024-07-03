@@ -71,7 +71,7 @@ const Navbar2 : React.FC = () => {
             {/* /Navbar Search*/}
             {/* Navbar Login*/}
             <li className="ms-1 d-none d-lg-inline-block">
-              <a className="nav-link text-body" href="{{webRoot}}/login.html">
+              <a className="nav-link text-body" href="">
                 Account
               </a>
             </li>

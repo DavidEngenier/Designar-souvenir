@@ -1,5 +1,6 @@
 "use client"
 import data from '@/public/data/homepage-categories.json';
+import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.min.css'; // Importa los estilos de Swiper
@@ -62,7 +63,7 @@ const Categories: React.FC = () => {
             </picture>
             <p className="title-small mb-2 text-muted">{ brand['small-title']}</p>
             <h4 className="lead fw-bold">{ brand['large-title']}</h4>
-            <a href="{{webRoot}}/category.html" className="btn btn-psuedo align-self-start">{brand['button-text']}</a>
+            <Link href="/Category" className="btn btn-psuedo align-self-start">{brand['button-text']}</Link>
         </div>
       </div>
     ))}
