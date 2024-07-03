@@ -30,7 +30,7 @@ const Toolbar =()=>{
     {/* / Filter Trigger*/}
     {/* Sort Options*/}
     <select className="form-select form-select-sm border-0 bg-light p-3 pe-5 lh-1 fs-7">
-      <option selected="">Sort By</option>
+      <option selected>Sort By</option>
       <option value={1}>Hi Low</option>
       <option value={2}>Low Hi</option>
       <option value={3}>Name</option>

@@ -120,7 +120,7 @@ export default function Payment() {
               data-bs-placement="top"
               title="A CVV is a number on your credit card or debit card that's in addition to your credit card number and expiration date"
             >
-              What's this?
+              
             </button>
           </div>
           <input

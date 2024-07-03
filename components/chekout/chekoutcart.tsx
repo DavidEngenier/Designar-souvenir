@@ -1,8 +1,25 @@
 import React from 'react';
 
-const CartItem = ({ img, name, qty, options, price }) => (
+// Define the types for the props
+interface CartItemProps {
+  img: string;
+  name: string;
+  qty: string;
+  options: string;
+  price: string;
+}
+
+interface CheckoutSummaryProps {
+  subtotal: string;
+  shipping: string;
+  grandTotal: string;
+  showActionButtons: boolean;
+}
+
+// Define the CartItem component with typed props
+const CartItem: React.FC<CartItemProps> = ({ img, name, qty, options, price }) => (
   <div className="pb-3">
-    {/* Cart Item*/}
+    {/* Cart Item */}
     <div className="cart-item">
       <img src={img} alt={name} />
       <div className="cart-item-details">
@@ -12,11 +29,12 @@ const CartItem = ({ img, name, qty, options, price }) => (
         <p>Price: {price}</p>
       </div>
     </div>
-    {/* / Cart Item*/}
+    {/* / Cart Item */}
   </div>
 );
 
-const CheckoutSummary = ({ subtotal, shipping, grandTotal, showActionButtons }) => (
+// Define the CheckoutSummary component with typed props
+const CheckoutSummary: React.FC<CheckoutSummaryProps> = ({ subtotal, shipping, grandTotal, showActionButtons }) => (
   <>
     <div className="pb-4 border-bottom">
       <div className="d-flex justify-content-between align-items-center mb-2">
@@ -45,11 +63,11 @@ const CheckoutSummary = ({ subtotal, shipping, grandTotal, showActionButtons }) 
     </div>
     {showActionButtons && (
       <>
-        {/* Accept Terms Checkbox*/}
+        {/* Accept Terms Checkbox */}
         <div className="form-group form-check my-4">
           <input type="checkbox" className="form-check-input" id="accept-terms" checked />
           <label className="form-check-label fw-bolder" htmlFor="accept-terms">
-            I agree to Outdoorly's <a href="#">terms & conditions</a>
+            I agree to Outdoorlys <a href="#">terms & conditions</a>
           </label>
         </div>
         <a href="/order-success.html" className="btn btn-dark w-100" role="button">
@@ -60,7 +78,8 @@ const CheckoutSummary = ({ subtotal, shipping, grandTotal, showActionButtons }) 
   </>
 );
 
-export default function CheckoutPage() {
+// Define the main CheckoutPage component
+const CheckoutPage: React.FC = () => {
   return (
     <>
       <CartItem
@@ -80,4 +99,6 @@ export default function CheckoutPage() {
       <CheckoutSummary subtotal="422.99" shipping="8.95" grandTotal="422.99" showActionButtons={true} />
     </>
   );
-}
+};
+
+export default CheckoutPage;
