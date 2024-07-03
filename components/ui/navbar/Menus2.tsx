@@ -203,12 +203,12 @@ const Menus2 : React.FC = () => {
         </Link>
       </li>
       <li>
-        <Link className="dropdown-item" href="/Chekout/Cart">
+        <Link className="dropdown-item" href="/chekout/Cart">
           Cart
         </Link>
       </li>
       <li>
-        <Link className="dropdown-item" href="/Chekout/Chekout">
+        <Link className="dropdown-item" href="/chekout/Chekout">
           Checkout
         </Link>
       </li>
