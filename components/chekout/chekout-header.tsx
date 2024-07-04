@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import LOGS from '../SVG/Logo';
 
 interface NavbarProps {
   activeCart?: boolean;
@@ -19,7 +20,7 @@ const Checkoutheader: React.FC<NavbarProps> = ({
       {/* Logo */}
       <Link href="/" passHref>
         <div className="navbar-brand fw-bold fs-3 flex-shrink-0 mx-0 px-0">
-          hola
+          <LOGS width={160} height={110}/>
         </div>
       </Link>
       {/* / Logo */}
@@ -28,28 +29,28 @@ const Checkoutheader: React.FC<NavbarProps> = ({
           <li className="me-4">
             <Link href="/chekout/Cart" passHref>
               <div className={`nav-link-checkout ${activeCart ? 'active' : ''}`}>
-                Your Cart
+                Tu carrito
               </div>
             </Link>
           </li>
           <li className="me-4">
             <Link href="/chekout/Chekout" passHref>
               <div className={`nav-link-checkout ${activeInformation ? 'active' : ''}`}>
-                Information
+                Infomacion
               </div>
             </Link>
           </li>
           <li className="me-4">
             <Link href="/chekout/Chekout-shiping" passHref>
               <div className={`nav-link-checkout ${activeShipping ? 'active' : ''}`}>
-                Shipping
+                Envio
               </div>
             </Link>
           </li>
           <li>
             <Link href="/chekout/Chekout-payment" passHref>
               <div className={`nav-link-checkout nav-link-last ${activePayment ? 'active' : ''}`}>
-                Payment
+                Pago
               </div>
             </Link>
           </li>

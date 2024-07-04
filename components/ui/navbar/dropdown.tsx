@@ -253,9 +253,10 @@ const Droprtitem: React.FC = () => {
   </div>
   <div className="align-items-center justify-content-between mt-5 d-none d-lg-flex">
     
-    <div className="me-5 f-w-20">
+   
     {data.entries.map((brand, index) =>(
-      <a key={index} className="d-block" href="/Category.html">
+ <div className="me-5 f-w-20" key={index}>
+      <a  className="d-block" href="/Category.html">
         <picture>
           <img
             className="img-fluid d-table mx-auto"
@@ -263,8 +264,9 @@ const Droprtitem: React.FC = () => {
             alt={`Logo ${index + 1}`}
           />
         </picture>
-      </a>  ))}
-    </div>
+      </a>  
+      </div>))}
+   
     
   </div>
 </>

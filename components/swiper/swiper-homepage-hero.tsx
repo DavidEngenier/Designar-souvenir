@@ -60,7 +60,7 @@ export default function Heroswiper() {
               className="btn btn-psuedo text-white"
               role="button"
             >
-              Shop New Arrivals
+              Compra lo nuevo
             </a>
           </div>
         </div>

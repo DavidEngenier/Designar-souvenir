@@ -1,0 +1,29 @@
+.dropdown-menu.dropdown-megamenu {
+    top: 80px; /* Ajusta este valor para mover el dropdown más arriba */
+    left: 0;
+    right: 0;
+    transform: none !important;
+    /* Asegúrate de que la propiedad display sea correcta */
+    display: block !important; /* Esto asegura que el dropdown se muestre */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
+  }
+  
+  .dropdown-menu.dropdown-megamenu.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+  .dropdown-menu.dropdown-megamenu.little {
+    top: 50px; /* Ajusta este valor para mover el dropdown más arriba */
+    left: 0;
+    right: 0;
+    transform: none !important;
+    /* Asegúrate de que la propiedad display sea correcta */
+    display: block !important; /* Esto asegura que el dropdown se muestre */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
+  }

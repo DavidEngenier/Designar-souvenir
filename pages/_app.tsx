@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 
 import"@/pages/css/theme.bundle.css";
-
+import "@/styles/dropdowns.css"
 import '@/pages/css/Categories.css';
 import type { AppProps } from "next/app";
 

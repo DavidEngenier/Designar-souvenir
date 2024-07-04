@@ -85,7 +85,7 @@ const CategoryProductsComponent: React.FC = () => {
         data-aos="fade-right"
         data-aos-delay={300}
       >
-        <h1 className="fw-bold display-6 mb-4 text-white">Latest Arrivals</h1>
+        <h1 className="fw-bold display-6 mb-4 text-white">Lo Nuevo de hoy</h1>
         <div className="col-12 col-md-6">
           <p className="text-white mb-0 fs-5">
           

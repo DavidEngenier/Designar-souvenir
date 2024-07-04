@@ -1,10 +1,14 @@
+import Link from "next/link";
+
+
+
 export default function CartSUMARY () {  
     return(<>
         <div className="pb-4 border-bottom">
           <div className="d-flex flex-column flex-md-row justify-content-md-between mb-4 mb-md-2">
             <div>
-              <p className="m-0 fw-bold fs-5">Grand Total</p>
-              <span className="text-muted small">Inc $45.89 sales tax</span>
+              <p className="m-0 fw-bold fs-5">Total</p>
+              <span className="text-muted small"></span>
             </div>
             <p className="m-0 fs-5 fw-bold">$422.99</p>
           </div>
@@ -14,18 +18,18 @@ export default function CartSUMARY () {
             <input
               type="text"
               className="form-control"
-              placeholder="Enter coupon code"
+              placeholder="Ingresar Cupon"
             />
-            <button className="btn btn-secondary btn-sm px-4">Apply</button>
+            <button className="btn btn-secondary btn-sm px-4">Aplicar</button>
           </div>
         </div>
-        <a
-          href="/chekout/Checkout"
+        <Link
+          href="/chekout/Chekout"
           className="btn btn-dark w-100 text-center"
           role="button"
         >
-          Proceed to checkout
-        </a>
+          Proceder al Pago
+        </Link>
       </>
       );
 };

@@ -70,7 +70,7 @@ const CheckoutSummary: React.FC<CheckoutSummaryProps> = ({ subtotal, shipping, g
             I agree to Outdoorlys <a href="#">terms & conditions</a>
           </label>
         </div>
-        <a href="/order-success.html" className="btn btn-dark w-100" role="button">
+        <a href="" className="btn btn-dark w-100" role="button">
           Complete Order
         </a>
       </>

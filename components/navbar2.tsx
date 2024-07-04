@@ -4,8 +4,16 @@ import Dropdowncart from "@/components/cart/cart-remove/cartdropdown";
 import React from "react";
 import data from "@/public/data/category-products.json";
 import Cart from '@/components/ui/navbar/dropdowncart';
+import LOGS from "./SVG/Logo";
+import Link from "next/link";
+
 
 const Navbar2 : React.FC = () => {
+
+  
+
+
+
   return (
     <>
   {/* Navbar */}
@@ -16,13 +24,13 @@ const Navbar2 : React.FC = () => {
     
       <div className="w-100">
         <div className="d-flex justify-content-between align-items-center flex-wrap">
-         {/* Logo*/}
-          <a
+        
+          <Link
             className="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0 order-0"
-            href=""
+            href="/"
           >  
-            {/* {{> logo/logo-icon }}*/}
-          </a>
+            <LOGS width={109} height={106}/>
+          </Link>
           {/* / Logo*/}
           {/* Navbar Icons*/}
           <ul className="list-unstyled mb-0 d-flex align-items-center order-1 order-lg-2 nav-sidelinks">
@@ -46,7 +54,7 @@ const Navbar2 : React.FC = () => {
             {/* Navbar Search*/}
             <li className="d-none d-sm-block">
               <span className="nav-link text-body search-trigger cursor-pointer">
-                Search
+                Buscador
               </span>
               {/* Search navbar overlay*/}
               <div className="navbar-search d-none">
@@ -72,7 +80,7 @@ const Navbar2 : React.FC = () => {
             {/* Navbar Login*/}
             <li className="ms-1 d-none d-lg-inline-block">
               <a className="nav-link text-body" href="">
-                Account
+                Cuenta
               </a>
             </li>
             {/* /Navbar Login*/}
@@ -84,7 +92,7 @@ const Navbar2 : React.FC = () => {
                 type="button"
                 
               >
-                Bag (2)
+                Carrito (2)
               </button>
               
               <Dropdowncart/>

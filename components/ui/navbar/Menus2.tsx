@@ -1,237 +1,247 @@
-
-import Cart from './dropdowncart';
-import React from "react";
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Droprtitem from './dropdown';
+import Cart from './dropdowncart';
 
 
+const Menus2: React.FC = () => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const dropdownToggles = document.querySelectorAll<HTMLAnchorElement>('.nav-item.dropdown .nav-link');
+      const dropdownMenus = document.querySelectorAll<HTMLDivElement>('.dropdown-menu.dropdown-megamenu');
+
+      if (dropdownToggles.length && dropdownMenus.length) {
+        console.log("Dropdown elements found");
+
+        dropdownToggles.forEach((toggle, index) => {
+          const menu = dropdownMenus[index];
+
+          if (menu) {
+            // Función para mostrar el menú desplegable
+            const showDropdown = () => {
+              menu.classList.add('show');
+              toggle.setAttribute('aria-expanded', 'true');
+            };
+
+            // Función para ocultar el menú desplegable
+            const hideDropdown = () => {
+              menu.classList.remove('show');
+              toggle.setAttribute('aria-expanded', 'false');
+            };
+
+            // Event listeners para mostrar el menú al pasar el cursor y ocultarlo al salir
+            toggle.addEventListener('mouseenter', showDropdown);
+            toggle.addEventListener('focus', showDropdown);
+
+            toggle.addEventListener('mouseleave', (event) => {
+              if (!menu.contains(event.relatedTarget as Node)) {
+                hideDropdown();
+              }
+            });
+
+            menu.addEventListener('mouseleave', (event) => {
+              if (!toggle.contains(event.relatedTarget as Node)) {
+                hideDropdown();
+              }
+            });
+
+            // También puedes agregar event listeners para eventos de clic/touchstart
+            toggle.addEventListener('click', (event) => {
+              event.preventDefault();
+              if (menu.classList.contains('show')) {
+                hideDropdown();
+              } else {
+                showDropdown();
+              }
+            });
+
+            document.addEventListener('click', (event) => {
+              if (!menu.contains(event.target as Node) && !toggle.contains(event.target as Node)) {
+                hideDropdown();
+              }
+            });
+
+            document.addEventListener('touchstart', (event) => {
+              if (!menu.contains(event.target as Node) && !toggle.contains(event.target as Node)) {
+                hideDropdown();
+              }
+            });
+          } else {
+            console.log(`No menu found for toggle at index ${index}`);
+          }
+        });
+      } else {
+        console.log("Mismatched number of dropdown elements found");
+      }
+    } else {
+      console.log("Dropdown elements not found");
+    }
+  }, []);
 
 
-const Menus2 : React.FC = () => {
-    return(
-      <>
-<ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-  <li className="nav-item dropdown dropdown position-static">
-    <Link
-     className="nav-link dropdown-toggle"
-     href="#"
-     role="button"
-     data-bs-toggle="dropdown"
-     aria-expanded="false"
-    >
-      Men
-    </Link>
-    {/* Menswear dropdown menu*/}
-    <div className="dropdown-menu dropdown-megamenu">
-      <div className="container-fluid">
-        <div className="row g-0 g-lg-3">
-          {/* Menswear Dropdown Menu Links Section*/}
-          <div className="col col-lg-8 py-lg-5">
-             <div className="row py-3 py-lg-0 flex-wrap gx-4 gy-6">
-    
-    <div className="col">
-        <h6 className="dropdown-heading">Coats & Jackets</h6>
-        <ul className="list-unstyled">
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Waterproof Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Insulated Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Down Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Softshell Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Casual Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Windproof Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Breathable Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Cleaning & Proofing</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item dropdown-link-all" href="/Category">View All</Link></li>
-        </ul>
-    </div>
-   
-    <div className="col">
-        <h6 className="dropdown-heading">Insulated</h6>
-        <ul className="list-unstyled">
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Insulated Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Bodywarmers</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Parkas</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Baselayers & Thermals</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Winter Hats</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Scarves & Neck</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Gloves & Mitts</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Accessories</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item dropdown-link-all" href="/Category">View All</Link></li>
-        </ul>
-    </div>
-    
-    <div className="d-none d-xxl-block col">
-        <h6 className="dropdown-heading">Footwear</h6>
-        <ul className="list-unstyled">
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Lifestyle & Casual</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Walking Shoes</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Running Shoes</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Military Boots</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Fabric Walking Boots</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Leather Walking Boots</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Wellies</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item" href="/Category">Winter Footwear</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item dropdown-link-all" href="/Category">View All</Link></li>
-        </ul>
-    </div>
-   
-    <div className="col">
-        <h6 className="dropdown-heading text-danger">Special Offers</h6>
-        <ul className="list-unstyled">
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Insulated Jackets</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Bodywarmers</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Parkas</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Baselayers & Thermals</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Winter Hats</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Scarves & Neck</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Gloves & Mitts</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger" href="/Category">Accessories</Link></li>
-            <li className="dropdown-list-item"><Link className="dropdown-item text-danger dropdown-link-all" href="/Category">View All</Link></li>
-        </ul>
-    </div>
-        
-</div>
-  </div>
-          {/* /Menswear Dropdown Menu Links Section*/}
-          {/* Menswear Dropdown Menu Images Section*/}
-          <div className="col-lg-4 d-none d-lg-block">
-            <div className="vw-50 border-start h-100 position-absolute" />
-            <div className="py-lg-5 position-relative z-index-10 px-lg-4">
-              <div className="row g-4">
-                <div className="col-12 col-md-6"><Cart 
-                img={`/OLDS/images/banners/banner-12.jpg`} // Ajusta la ruta de la imagen según tu configuración
-                title="Latest Arrivals"/></div>
-                <div className="col-12 col-md-6"><Cart
-                img={`/OLDS/images/banners/banner-12.jpg`} // Ajusta la ruta de la imagen según tu configuración
-                title="Latest Arrivals"/></div>
-                <div className="col-12 col-md-6"><Cart
-                img={`/OLDS/images/banners/banner-12.jpg`} // Ajusta la ruta de la imagen según tu configuración
-                title="Latest Arrivals"/></div>
-                <div className="col-12 col-md-6"><Cart
-                img={`/OLDS/images/banners/banner-12.jpg`} // Ajusta la ruta de la imagen según tu configuración
-                title="Latest Arrivals"/></div>
+  return (
+    <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+      <li className="nav-item dropdown position-static">
+        <Link
+          className="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Hombres
+        </Link>
+        {/* Menswear dropdown menu */}
+        <div className="dropdown-menu dropdown-megamenu">
+          <div className="container-fluid">
+            <div className="row g-0 g-lg-3">
+              {/* Menswear Dropdown Menu Links Section */}
+              <div className="col col-lg-8 py-lg-5">
+                <Droprtitem />
               </div>
-              <Link
-                href="#"
-                className="btn btn-link p-0 fw-bolder text-link-border mt-5 text-dark mx-auto d-table"
-              >
-                Visit Mens Section
-              </Link>
+              {/* /Menswear Dropdown Menu Links Section */}
+              {/* Menswear Dropdown Menu Images Section */}
+              <div className="col-lg-4 d-none d-lg-block">
+                <div className="vw-50 border-start h-100 position-absolute" />
+                <div className="py-lg-5 position-relative z-index-10 px-lg-4">
+                  <div className="row g-4">
+                    <div className="col-12 col-md-6">
+                      <Cart img={`/OLDS/images/banners/banner-12.jpg`} title="Latest Arrivals" />
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <Cart img={`/OLDS/images/banners/banner-12.jpg`} title="Latest Arrivals" />
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <Cart img={`/OLDS/images/banners/banner-12.jpg`} title="Latest Arrivals" />
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <Cart img={`/OLDS/images/banners/banner-12.jpg`} title="Latest Arrivals" />
+                    </div>
+                  </div>
+                  <Link
+                    href="#"
+                    className="btn btn-link p-0 fw-bolder text-link-border mt-5 text-dark mx-auto d-table"
+                  >
+                    Visit Mens Section
+                  </Link>
+                </div>
+              </div>
+              {/* /Menswear Dropdown Menu Images Section */}
             </div>
           </div>
-          {/* Menswear Dropdown Menu Images Section*/}
         </div>
-      </div>
-    </div>
-    {/* / Menswear dropdown menu*/}
-  </li>
-  <li className="nav-item dropdown">
-    <Link
-      className="nav-link dropdown-toggle"
-      href="#"
-      role="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      Women
-    </Link>
-    <ul className="dropdown-menu">
-      <li>
-        <Link className="dropdown-item" href="">
-          Tops
+        {/* /Menswear dropdown menu */}
+      </li>
+      <li className="nav-item dropdown ">
+        <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Mujeres
+        </Link>
+        <ul className="dropdown-menu dropdown-megamenu ">
+        <div className="container-fluid  ">
+            <div className="row g-0 g-lg-3">
+              {/* Menswear Dropdown Menu Links Section */}
+              <div className="">
+          <li>
+            <Link className="dropdown-item" href="">
+              Tops
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              Bottoms
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              Jeans
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              T-Shirts
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              Shoes
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              Accessories
+            </Link>
+          </li>
+          </div>
+          </div>
+          </div>
+        </ul>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" href="" role="button">
+          Niños
         </Link>
       </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          Bottoms
+      <li className="nav-item">
+        <Link className="nav-link" href="" role="button">
+          Venta
         </Link>
       </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          Jeans
+      <li className="nav-item dropdown">
+        <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Paginas
         </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          T-Shirts
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          Shoes
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          Accessories
-        </Link>
+        <ul className="dropdown-menu dropdown-megamenu">
+        <div className="container-fluid ">
+            <div className="row g-0 g-lg-3">
+              {/* Menswear Dropdown Menu Links Section */}
+              <div className="">
+          <li>
+            <Link className="dropdown-item" href="/">
+              Homepage
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="/Category">
+              Category
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="/Product">
+              Product
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="/chekout/Cart">
+              Cart
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="/chekout/Chekout">
+              Checkout
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              Register
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" href="">
+              Forgotten Password
+            </Link>
+          </li>
+          </div>
+          </div>
+          </div>
+        </ul>
       </li>
     </ul>
-  </li>
-  <li className="nav-item">
-    <Link className="nav-link" href="" role="button">
-      Kids
-    </Link>
-  </li>
-  <li className="nav-item">
-    <Link className="nav-link" href="" role="button">
-      Sale
-    </Link>
-  </li>
-  <li className="nav-item dropdown">
-    <Link
-      className="nav-link dropdown-toggle"
-      href="#"
-      role="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      Pages
-    </Link>
-    <ul className="dropdown-menu">
-      <li>
-        <Link className="dropdown-item" href="/">
-          Homepage
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="/Category">
-          Category
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="/Product">
-          Product
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="/chekout/Cart">
-          Cart
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="/chekout/Chekout">
-          Checkout
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          Login
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          Register
-        </Link>
-      </li>
-      <li>
-        <Link className="dropdown-item" href="">
-          Forgotten Password
-        </Link>
-      </li>
-    </ul>
-  </li>
-</ul>
+  );
+};
 
-      </>);
-  };
-
-  export default Menus2;
+export default Menus2;

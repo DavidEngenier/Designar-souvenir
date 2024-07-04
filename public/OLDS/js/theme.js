@@ -1,6 +1,5 @@
 // Vendor Imports
-import 'bootstrap';
-console.log('Bootstrap loaded');
+
 
 // Components
 import './components/aos';
@@ -25,6 +24,7 @@ import './components/simplebar';
 
 import './components/swiper';
 
+import './components/navbarmenu';
 
 // theme misc js
 import './misc';

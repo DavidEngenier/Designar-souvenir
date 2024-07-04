@@ -5,7 +5,7 @@ export default function Shiping() {
   {/*{{> checkout/checkout-information-summary show-contact="true" }}*/}
   {/* / Checkout Information Summary*/}
   {/* Checkout Panel Information*/}
-  <h3 className="fs-5 fw-bolder mb-4 border-bottom pb-4">Shipping Method</h3>
+  <h3 className="fs-5 fw-bolder mb-4 border-bottom pb-4">Metodo de envio</h3>
   {/* Shipping Option*/}
   <div className="form-check form-group form-check-custom form-radio-custom form-radio-highlight mb-3">
     <input
@@ -19,9 +19,9 @@ export default function Shiping() {
       <span className="d-flex justify-content-between align-items-start">
         <span>
           <span className="mb-0 fw-bolder d-block">
-            Click &amp; Collect Shipping
+           Recoger en Tienda
           </span>
-          <small className="fw-bolder">Collect from our London store</small>
+          <small className="fw-bolder">Recoge en nuestra sucursal</small>
         </span>
         <span className="small fw-bolder text-uppercase">Free</span>
       </span>
@@ -38,9 +38,9 @@ export default function Shiping() {
     <label className="form-check-label" htmlFor="checkoutShippingMethodTwo">
       <span className="d-flex justify-content-between align-items-start">
         <span>
-          <span className="mb-0 fw-bolder d-block">UPS Next Day</span>
+          <span className="mb-0 fw-bolder d-block">Estafeta</span>
           <small className="fw-bolder">
-            For all orders placed before 1pm Monday to Thursday
+           Envio en Mexico
           </small>
         </span>
         <span className="small fw-bolder text-uppercase">$19.99</span>
@@ -58,8 +58,8 @@ export default function Shiping() {
     <label className="form-check-label" htmlFor="checkoutShippingMethodThree">
       <span className="d-flex justify-content-between align-items-start">
         <span>
-          <span className="mb-0 fw-bolder d-block">DHL Priority Service</span>
-          <small className="fw-bolder">24 - 36 hour delivery</small>
+          <span className="mb-0 fw-bolder d-block">Fedex</span>
+          <small className="fw-bolder">Rapido y a todo el mundo</small>
         </span>
         <span className="small fw-bolder text-uppercase">$9.99</span>
       </span>
@@ -71,14 +71,14 @@ export default function Shiping() {
       className="btn ps-md-0 btn-link fw-bolder w-100 w-md-auto mb-2 mb-md-0"
       role="button"
     >
-      Back to information
+      Atras
     </a>
     <a
       href="chekout/Checkout-payment"
       className="btn btn-dark w-100 w-md-auto"
       role="button"
     >
-      Proceed to payment
+      Proceder al pago
     </a>
   </div>
 </>

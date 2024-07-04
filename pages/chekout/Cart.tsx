@@ -27,7 +27,7 @@ const CategoryProductsComponent: React.FC = () => {
                 <Checkoutheader activeCart={true} />
                 <div className="mt-5">
                   <h3 className="fs-5 fw-bolder mb-0 border-bottom pb-4">
-                    Your Cart
+                    Bolsa
                   </h3>
                   <div className="table-responsive">
                     <table className="table align-middle">
